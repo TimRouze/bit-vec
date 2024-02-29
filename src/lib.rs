@@ -552,7 +552,7 @@ impl<B: BitBlock> BitVec<B> {
             i,
             self.nbits
         );
-        let w = i / B::bits();
+        let w = i >> B::bits();
         let b = i % B::bits();
         let flag = B::one() << b;
         let val = if x {
